@@ -1,12 +1,14 @@
 const ToDo = ({ todo, deleteTodo, editarTodo }) => {
-    const { id, nombre, descripcion, estado, prioridad } = todo;
+    const { id, nombre, apellido, estado, prioridad } = todo;
     return (
         <li className="list-group-item d-flex justify-content-between align-items-start">
             <div className="ms-2 me-auto">
                 <div className="fw-bold">
                     {nombre} ({estado ? "Finalizado" : "Pendiente"})
                 </div>
-                <p>{descripcion}</p>
+                <div className="fw-bold" >
+                    {apellido} ({estado ? "Finalizado" : "Pendiente"})
+                </div>
                 <div>
                     <button
                         className="btn btn-sm btn-danger me-1"

@@ -6,12 +6,13 @@ const Form = ({ addTodo }) => {
         nombre: "",
         apellido: "",
         estado: "pendiente",
-        prioridad: false,
+        descripcion: "",
+        prioridad: false
     };
 
     const [inputs, handleChange, reset] = useFormulario(initialState);
 
-    const { nombre, apellido, estado, prioridad } = inputs;
+    const { nombre, apellido, estado, descripcion, prioridad} = inputs;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,6 +39,7 @@ const Form = ({ addTodo }) => {
             apellido: apellido,
             estado: estado === "pendiente" ? false : true,
             prioridad: prioridad,
+            descripcion: descripcion,
             id: Date.now(),
         });
 
@@ -71,7 +73,14 @@ const Form = ({ addTodo }) => {
                     onChange={handleChange}
                     className="form-control mb-2"
                 />
-                
+                <textarea
+                    type="text"
+                    placeholder="descripcion"
+                    name="descripcion"
+                    value={descripcion}
+                    onChange={handleChange}
+                    className="form-control mb-2"
+                />
                 <select
                     name="estado"
                     value={estado}
