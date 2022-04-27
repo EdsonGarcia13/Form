@@ -3,7 +3,7 @@ import List from "./components/List";
 const App = () => {
 
   return (
-        <div> 
+        <div className="App"> 
             <List/>
         </div>
     );
